@@ -1,0 +1,7 @@
+SELECT "inDelivery", cancelled, finished, CASE
+	WHEN  "inDelivery" = true THEN 1
+	WHEN cancelled = true THEN -1
+	WHEN finished = true THEN 2
+	ELSE 0
+	END AS status
+FROM "Orders";
